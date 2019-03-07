@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+    <title>Border on Empty Cells</title>
+    <style type="text/css">
+        td {
+            border: 1px solid #0088dd;
+            padding: 15px;
+            background-color: gainsboro;
+        }
+
+        table.one {
+            empty-cells: show;
+            display: inline-block;
+            border-spacing: 15px 5px;
+        }
+
+        table.two {
+            empty-cells: hide;
+            display: inline-block;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table class="one">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+    </table>
+    <table class="two">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+
+<head>
+  <title>Grid Layout</title>
+  <link rel="stylesheet" type="text/css" href="css/unsemantic-grid-desktop.css" />
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      color: #665544;
+      text-align: center;
+      max-width: 1280;
+      min-width: 500;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #nav,
+    #feature,
+    .article,
+    #footer {
+      background-color: #efefef;
+      margin-top: 20px;
+      padding: 10px 10px 5px 10px;
+      box-sizing: border-box;
+    }
+
+    #feature,
+    .article {
+      height: auto;
+
+    }
+
+    li {
+      display: inline;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div id="header" class="grid-100">
+      <h1>Logo</h1>
+      <div id="nav">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Products</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="feature" class="grid-100">
+      <p>Feature</p>
+    </div>
+    <div class="article one grid-33">
+      <p>Column One</p>
+      <p>The 960_12_col.css stylesheet
+        contains all of the rules we need
+        to control the grid layout. The
+        HTML uses the class names:</p>
+      <p>container_12 to act as a
+        container for the whole page and
+        indicate that we are using a 12
+        column grid</p>
+      <p>clearfix to ensure that
+        browsers know the height of the
+        containing box, because it only
+        contains floated elements</p>
+      <p>grid_12 to create a block that is
+        twelve columns wide</p>
+      <p>grid_4 to create a block that is
+        four columns wide</p>
+    </div>
+    <div class="article grid-33">
+      <p>Column Two</p>
+    </div>
+    <div class="article grid-33">
+      <p>Column Three</p>
+    </div>
+    <div id="footer" class="grid-100">
+      <p>&copy; Copyright 2011</p>
+    </div>
+  </div><!-- .container -->
+</body>
+
+</html>

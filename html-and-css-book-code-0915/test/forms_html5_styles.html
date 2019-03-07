@@ -1,0 +1,88 @@
+<html>
+
+<head>
+  <title>Forms HTML5</title>
+  <style type="text/css">
+    body {
+      font-family: Verdana;
+    }
+
+    input {
+      font-size: 120%;
+      color: #5a5854;
+      background-color: #f2f2f2;
+      border: 1px solid #bdbdbd;
+      border-radius: 5px;
+      padding: 5px 5px 5px 5px;
+      background-repeat: no-repeat;
+      background-position: 8px 8px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input:focus {
+      background-color: #ffffff;
+      border: 1px solid #b1e1e4;
+    }
+
+    input#email {
+      background-image: url("images/email.png");
+    }
+
+    input#twitter {
+      background-image: url("images/twitter.png");
+    }
+
+    input#web {
+      background-image: url("images/web.png");
+    }
+
+    fieldset {
+      margin: 20px;
+      width: 350px;
+      border: 1px solid #dcdcdc;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: right;
+    }
+
+    legend {
+      width: 350px;
+      background-color: #efefef;
+      border: 1px solid #dcdcdc;
+      border-radius: 10px;
+      padding: 10px 20px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>EMAIL, URL & TWITTER INPUT</h3>
+  <fieldset>
+    <legend>Please enter your email address</legend>
+    <form action="http://www.example.org/subscribe.php">
+      <input id="email" type="email" name="email" placeholder="     Enter email" />
+      <input type="submit" value="Submit" />
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>Please enter your website address</legend>
+    <form action="http://www.example.org/profile.php">
+      <input id="web" type="url" name="website" placeholder="     Enter website" />
+      <input type="submit" value="Submit" />
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>Please enter your twitter address</legend>
+    <form action="http://www.example.org/profile.php">
+      <input id="twitter" type="twitter" name="twitter" placeholder="     Enter twitter address" />
+      <input type="submit" value="Submit" />
+    </form>
+  </fieldset>
+
+</body>
+
+</html>

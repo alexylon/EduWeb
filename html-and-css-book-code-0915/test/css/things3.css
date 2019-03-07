@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(242, 245, 247);
+}
+
+#header {
+    width: 370px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text1 {
+    font-family: Verdana;
+    font-size: 27px;
+    color: rgb(75, 84, 92);
+    text-align: center;
+    font-stretch: condensed;
+}
+
+.text2 {
+    font-family: Verdana;
+    font-size: 23px;
+    color: rgb(75, 84, 92);
+    text-align: center;
+    font-stretch: condensed;
+}
+
+#center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

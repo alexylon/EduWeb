@@ -1,0 +1,26 @@
+body {
+    background-color: beige;
+    padding: 10px;
+}
+
+h2 {
+    background-color: aqua;
+    padding: inherit;
+    opacity: 0.5;
+}
+
+h3 {
+    background-color: rgba(50, 50, 200, 0.5);
+    padding: inherit;
+}
+
+#intro {
+    background-color: darkgray;
+    padding: inherit;
+}
+
+p {
+    background-color: coral;
+    background-color: hsla(0, 0%, 75%, 0.5);
+    padding: inherit;
+}
