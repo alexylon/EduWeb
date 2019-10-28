@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const carinfo = [
+        { name: "Ford", model: "Mustang" },
+        { name: "Renault", model: "Laguna" },
+        { name: "Toyota", model: "Auris" }
+      ]
+
+      class Car extends React.Component {
+        render() {
+          const { name, model } = this.props
+          return (
+            <h2>
+              I am {name} {model}
+            </h2>
+          )
+        }
+      }
+
+      class Garage extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = { name: "Merzedes", model: "Benz" }
+        }
+        render() {
+          return (
+            <div>
+              <h1>What kind of cars are you?</h1>
+              {carinfo.map(car => (
+                <Car {...car} />
+              ))}
+              {<Car name={this.state.name} model={this.state.model} />}
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<Garage />, document.getElementById("root"))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Let’s recap what happens when you edit an input:</p>
+    <ul>
+      <li>
+        React calls the function specified as
+        <code class="gatsby-code-text">onChange</code> on the DOM
+        <code class="gatsby-code-text">&lt;input&gt;</code>. In our case, this
+        is the <code class="gatsby-code-text">handleChange</code> method in the
+        <code class="gatsby-code-text">TemperatureInput</code> component.
+      </li>
+      <li>
+        The <code class="gatsby-code-text">handleChange</code> method in the
+        <code class="gatsby-code-text">TemperatureInput</code> component calls
+        <code class="gatsby-code-text">this.props.onTemperatureChange()</code>
+        with the new desired value. Its props, including
+        <code class="gatsby-code-text">onTemperatureChange</code>, were provided
+        by its parent component, the
+        <code class="gatsby-code-text">Calculator</code>.
+      </li>
+      <li>
+        When it previously rendered, the
+        <code class="gatsby-code-text">Calculator</code> has specified that
+        <code class="gatsby-code-text">onTemperatureChange</code> of the Celsius
+        <code class="gatsby-code-text">TemperatureInput</code> is the
+        <code class="gatsby-code-text">Calculator</code>’s
+        <code class="gatsby-code-text">handleCelsiusChange</code> method, and
+        <code class="gatsby-code-text">onTemperatureChange</code> of the
+        Fahrenheit <code class="gatsby-code-text">TemperatureInput</code> is the
+        <code class="gatsby-code-text">Calculator</code>’s
+        <code class="gatsby-code-text">handleFahrenheitChange</code> method. So
+        either of these two
+        <code class="gatsby-code-text">Calculator</code> methods gets called
+        depending on which input we edited.
+      </li>
+      <li>
+        Inside these methods, the
+        <code class="gatsby-code-text">Calculator</code> component asks React to
+        re-render itself by calling
+        <code class="gatsby-code-text">this.setState()</code> with the new input
+        value and the current scale of the input we just edited.
+      </li>
+      <li>
+        React calls the
+        <code class="gatsby-code-text">Calculator</code> component’s
+        <code class="gatsby-code-text">render</code> method to learn what the UI
+        should look like. The values of both inputs are recomputed based on the
+        current temperature and the active scale. The temperature conversion is
+        performed here.
+      </li>
+      <li>
+        React calls the <code class="gatsby-code-text">render</code> methods of
+        the individual
+        <code class="gatsby-code-text">TemperatureInput</code> components with
+        their new props specified by the
+        <code class="gatsby-code-text">Calculator</code>. It learns what their
+        UI should look like.
+      </li>
+      <li>
+        React calls the <code class="gatsby-code-text">render</code> method of
+        the <code class="gatsby-code-text">BoilingVerdict</code> component,
+        passing the temperature in Celsius as its props.
+      </li>
+      <li>
+        React DOM updates the DOM with the boiling verdict and to match the
+        desired input values. The input we just edited receives its current
+        value, and the other input is updated to the temperature after
+        conversion.
+      </li>
+    </ul>
+    <p>Every update goes through the same steps so the inputs stay in sync.</p>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+    #lamp {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      background-color: grey;
+    }
+  </style>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Toggle extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = { isToggleOn: true }
+
+          // This binding is necessary to make `this` work in the callback
+          // if the method is not of arrow type
+          //this.handleClick = this.handleClick.bind(this)
+        }
+
+        handleClick() {
+          this.setState(() => ({
+            isToggleOn: !this.state.isToggleOn
+          }))
+          if (this.state.isToggleOn == true) {
+            document.getElementById("lamp").style = "background-color: yellow"
+          } else {
+            document.getElementById("lamp").style = "background-color: grey"
+          }
+        }
+
+        /* OR
+        handleClick() {
+          this.setState(state => ({
+            isToggleOn: !state.isToggleOn
+          }))
+        }
+        */
+
+        /* OR
+        handleClick() {
+          this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+          }))
+        }
+        */
+
+        render() {
+          return (
+            <div>
+              <div id="lamp"></div>
+              <div id="button">
+                <button onClick={this.handleClick}>
+                  {this.state.isToggleOn ? "ON" : "OFF"}
+                </button>
+              </div>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<Toggle />, document.getElementById("root"))
+    </script>
+  </body>
+</html>

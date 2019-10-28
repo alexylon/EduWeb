@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Car extends React.Component {
+        //The constructor run first
+        constructor(props) {
+          super(props)
+          this.state = { name: "Ford", model: "Mustang", color: "red" }
+        }
+
+        //static getDerivedStateFromProps runs right before render()
+        static getDerivedStateFromProps(props, state) {
+          return { model: props.favmodel, color: props.favcolor }
+        }
+
+        render() {
+          return (
+            <h2>
+              I am a {this.state.color} {this.state.name} {this.state.model}!
+            </h2>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <Car favcolor="yellow" favmodel="Prefect" />,
+        document.getElementById("root")
+      )
+    </script>
+  </body>
+</html>
